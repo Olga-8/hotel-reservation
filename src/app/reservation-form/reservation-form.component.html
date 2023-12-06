@@ -1,0 +1,49 @@
+<app-home></app-home>
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" class="form-group">
+    <div class="form-control">
+        <label class="form-label" for="checkInDate">Check-in Date:</label>
+        <input type="date" id="checkInDate" formControlName="checkInDate">
+        <div class="form-control-error" *ngIf="reservationForm.get('checkInDate')?.invalid && reservationForm.get('checkInDate')?.touched">
+            <div *ngIf="reservationForm.get('checkInDate')?.errors?.['required']">Check-in date is required</div>
+        </div>
+    </div>
+    
+
+    <div class="form-control">
+        <label class="form-label" for="checkOutDate">Check-out Date:</label>
+        <input type="date" id="checkOutDate" formControlName="checkOutDate">
+        <div class="form-control-error" *ngIf="reservationForm.get('checkOutDate')?.invalid && reservationForm.get('checkOutDate')?.touched">
+            <div *ngIf="reservationForm.get('checkOutDate')?.errors?.['required']">Check-out date is required</div>
+        </div>
+    </div>
+
+    <div class="form-control">
+        <label class="form-label" for="name">Name:</label>
+        <input type="text" id="name" formControlName="guestName">
+        <div class="form-control-error" *ngIf="reservationForm.get('guestName')?.invalid && reservationForm.get('guestName')?.touched">
+            <div *ngIf="reservationForm.get('guestName')?.errors?.['required']">Name is required</div>
+            <div *ngIf="reservationForm.get('guestName')?.errors?.['minlength']">Name must be at least 2 characters long</div>
+        </div>
+    </div>
+
+    <div class="form-control">
+        <label class="form-label" for="email">Email:</label>
+        <input type="email" id="email" formControlName="guestEmail">
+        <div class="form-control-error" *ngIf="reservationForm.get('guestEmail')?.invalid && reservationForm.get('guestEmail')?.touched">
+            <div *ngIf="reservationForm.get('guestEmail')?.errors?.['required']">Email is required</div>
+            <div *ngIf="reservationForm.get('guestEmail')?.errors?.['email']">Email must be a valid email address</div>
+        </div>
+    </div>
+
+    <div class="form-control">
+        <label class="form-label" for="number">Room number:</label>
+        <input type="number" id="number" formControlName="roomNumber">
+        <div class="form-control-error" *ngIf="reservationForm.get('roomNumber')?.invalid && reservationForm.get('roomNumber')?.touched">
+            <div *ngIf="reservationForm.get('roomNumber')?.errors?.['required']">Room number is required</div>
+            <div *ngIf="reservationForm.get('roomNumber')?.errors?.['min']">Room number must be at least 1</div>
+            <div *ngIf="reservationForm.get('roomNumber')?.errors?.['max']">Room number must be at most 100</div>
+        </div>
+    </div>
+
+    <button class="form-btn" type="submit" [disabled]="!reservationForm.valid">Ok</button>
+</form>
