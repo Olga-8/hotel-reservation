@@ -1,5 +1,5 @@
 
-h2{
+h2 {
     color: #fff;
     font-size: 50px;
     text-align: center;
@@ -14,7 +14,7 @@ h2{
     animation: fadeIn 1s ease-in-out;
 }
 
-button{
+button {
     display: block;
     margin: 0 auto;
     padding: 10px 20px;
@@ -35,7 +35,7 @@ button{
     width: 300px;
 }
 
-button:hover{
+button:hover {
     background: #333;
     color: #fff;
 }
@@ -48,4 +48,3 @@ button:hover{
         opacity: 1;
     }
 }
-

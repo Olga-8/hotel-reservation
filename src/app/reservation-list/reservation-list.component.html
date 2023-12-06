@@ -1,6 +1,6 @@
 <app-home></app-home>
 <h2>Reservations</h2>
-    <table class="table" *ngIf="reservations.length>0; else noReservation">
+    <table class="table" *ngIf="reservations; else noReservation">
         <thead>
         <tr>
             <th>Check-in Date</th>

@@ -13,12 +13,17 @@ export class ReservationListComponent implements OnInit {
   constructor(private reservationService: ReservationService) { }
 
   ngOnInit(): void {
-    this.reservations = this.reservationService.getReservations();
+    this.reservationService.getReservations().subscribe(
+      (reservations) => this.reservations = reservations
+    )
   }
 
   onDelete(id: string): void{
-    this.reservationService.deleteReservation(id);
-    this.reservations = this.reservationService.getReservations();
+    this.reservationService.deleteReservation(id).subscribe(
+      ()=> console.log(`Reservationdeleted`),
+    );
+    this.reservationService.getReservations().subscribe(
+      (reservations) => this.reservations = reservations
+    )
   }
 }
-

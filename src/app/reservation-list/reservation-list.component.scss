@@ -1,28 +1,28 @@
 
-.table{
+.table {
     width: 100%;
     margin-bottom: 1rem;
     color: #212529;
     border-collapse: collapse;
     border-spacing: 0;
     border: 1px solid #dee2e6;
-    thead{
+    thead {
         background-color: #e9ecef;
         color: #212529;
-        th{
+        th {
             padding: 0.75rem;
             vertical-align: top;
             border-top: 1px solid #dee2e6;
         }
     }
-    tbody{
-        td{
+    tbody {
+        td {
             padding: 0.75rem;
             vertical-align: top;
             border-top: 1px solid #dee2e6;
             text-align: center;
         }
-        button{
+        button {
             color: #fff;
             background-color: #000;
             border-color: #000;
@@ -31,7 +31,7 @@
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
-            &:hover{
+            &:hover {
                 color: #000;
                 background-color: #fff;
             }
